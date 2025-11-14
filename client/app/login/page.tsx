@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import { doLogin } from "./action";
+import ClientFlashComponent from "@/components/ClientFlashComponent";
 
 export const metadata: Metadata = {
   title: "Login",
@@ -17,11 +19,14 @@ const LoginPage = () => {
         />
       </div>
 
-      <div className="flex justify-center lg:p-32 p-16 items-center">
+      <div className="flex justify-center lg:p-24 p-16 items-center">
         <div className="w-full">
           <h1 className="text-center text-2xl font-bold">Login</h1>
 
-          <form action="" className="mt-8 flex flex-col gap-4">
+          <form action={doLogin} className="mt-4 flex flex-col gap-4">
+            {/* error message if exist */}
+            <ClientFlashComponent />
+
             {/* input email */}
             <div className="flex flex-col gap-1">
               <label htmlFor="email">Email</label>
