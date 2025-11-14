@@ -21,7 +21,7 @@ export const doLogin = async (formData: FormData) => {
   if (!response.ok) {
     const errMessage = responseJson.error ?? "Something went wrong!";
 
-    return redirect(`/login/${errMessage}`);
+    return redirect(`/login?error=${errMessage}`);
   }
 
   const token = responseJson.access_token!;
