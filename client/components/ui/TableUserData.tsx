@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import userData from "@/data/user.json";
+import SearchBar from "./SearchBar";
 
 type User = {
   id: number;
@@ -11,43 +12,83 @@ type User = {
   created_at: string;
 };
 
+type SortKey = keyof User;
+
 const TableUserData = () => {
   const [search, setSearch] = useState("");
+  const [sortKey, setSortKey] = useState<SortKey>("id");
+  const [sortAsc, setSortAsc] = useState(true);
 
-  // Filter user berdasarkan nama/email/role
-  const filteredData = userData.filter(
+  // search user berdasarkan nama/email
+  let filteredData = userData.filter(
     (user: User) =>
       user.name.toLowerCase().includes(search.toLowerCase()) ||
-      user.email.toLowerCase().includes(search.toLowerCase()) ||
-      user.role.toLowerCase().includes(search.toLowerCase())
+      user.email.toLowerCase().includes(search.toLowerCase())
   );
+
+  // Sort asc/desc
+  filteredData = [...filteredData].sort((a, b) => {
+    if (a[sortKey] < b[sortKey]) return sortAsc ? -1 : 1;
+    if (a[sortKey] > b[sortKey]) return sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  // icon
+  const renderSortArrow = (key: SortKey) =>
+    sortKey === key ? (sortAsc ? " ▲" : " ▼") : "";
 
   return (
     <div className="mt-8">
-      <div className="w-full flex gap-4 mb-4">
-        <form
-          className="flex gap-2 items-center bg-gray-100 px-4 py-2 rounded-xl w-full"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <i className="ri-search-line text-primary"></i>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full px-4 py-1 rounded-lg focus:border-0 focus:outline-none"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </form>
-      </div>
+      <SearchBar search={search} setSearch={setSearch} />
 
       <table className="w-full">
         <thead>
           <tr>
-            <th className="px-4 py-2 border">ID</th>
-            <th className="px-4 py-2 border">Name</th>
-            <th className="px-4 py-2 border">Email</th>
-            <th className="px-4 py-2 border">Role</th>
-            <th className="px-4 py-2 border">Created At</th>
+            <th
+              className="px-4 py-2 border cursor-pointer"
+              onClick={() => {
+                setSortKey("id");
+                setSortAsc(sortKey === "id" ? !sortAsc : true);
+              }}
+            >
+              ID{renderSortArrow("id")}
+            </th>
+            <th
+              className="px-4 py-2 border cursor-pointer"
+              onClick={() => {
+                setSortKey("name");
+                setSortAsc(sortKey === "name" ? !sortAsc : true);
+              }}
+            >
+              Name{renderSortArrow("name")}
+            </th>
+            <th
+              className="px-4 py-2 border cursor-pointer"
+              onClick={() => {
+                setSortKey("email");
+                setSortAsc(sortKey === "email" ? !sortAsc : true);
+              }}
+            >
+              Email{renderSortArrow("email")}
+            </th>
+            <th
+              className="px-4 py-2 border cursor-pointer"
+              onClick={() => {
+                setSortKey("role");
+                setSortAsc(sortKey === "role" ? !sortAsc : true);
+              }}
+            >
+              Role{renderSortArrow("role")}
+            </th>
+            <th
+              className="px-4 py-2 border cursor-pointer"
+              onClick={() => {
+                setSortKey("created_at");
+                setSortAsc(sortKey === "created_at" ? !sortAsc : true);
+              }}
+            >
+              Created At{renderSortArrow("created_at")}
+            </th>
           </tr>
         </thead>
         <tbody>
