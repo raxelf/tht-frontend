@@ -1,5 +1,5 @@
-import LogoutButton from "@/components/LogoutButton";
-import SideBar from "@/components/SideBar";
+import LogoutButton from "@/components/ui/LogoutButton";
+import SideBar from "@/components/layout/SideBar";
 import Image from "next/image";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {

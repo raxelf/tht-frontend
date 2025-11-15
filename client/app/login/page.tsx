@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { doLogin } from "./action";
-import ClientFlashComponent from "@/components/ClientFlashComponent";
+import ClientFlashComponent from "@/components/auth/ClientFlashComponent";
 
 export const metadata: Metadata = {
   title: "Login",
