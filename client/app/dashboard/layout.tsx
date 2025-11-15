@@ -9,7 +9,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 
       <main className="col-span-9 w-full h-full">
         {/* header */}
-        <section className="flex justify-end p-4 w-full gap-8">
+        <section className="flex justify-end p-3 w-full gap-8">
           <div className="flex gap-2 items-center">
             <Image
               src={"/user-placeholder.png"}

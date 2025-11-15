@@ -28,7 +28,7 @@ const SideBar = () => {
         <div className="flex flex-col gap-2 pl-8">
           <Link
             href="/dashboard"
-            className={`group w-full px-6 py-2 rounded-l-lg flex gap-2 items-center cursor-pointer mt-8 delay-75 transition ${
+            className={`group w-full px-6 py-2 rounded-l-lg flex gap-2 items-center cursor-pointer mt-8 ${
               pathname === "/dashboard"
                 ? "bg-primary text-white"
                 : "bg-gray-300 text-primary hover:text-white hover:bg-primary"
@@ -54,7 +54,7 @@ const SideBar = () => {
 
           <Link
             href="/dashboard/users"
-            className={`group w-full px-6 py-2 rounded-l-lg flex gap-2 items-center cursor-pointer delay-75 transition ${
+            className={`group w-full px-6 py-2 rounded-l-lg flex gap-2 items-center cursor-pointer ${
               pathname.startsWith("/dashboard/users")
                 ? "bg-primary text-white"
                 : "bg-gray-300 text-primary hover:text-white hover:bg-primary"
@@ -80,7 +80,7 @@ const SideBar = () => {
 
           <Link
             href="/dashboard/reports"
-            className={`group w-full px-6 py-2 rounded-l-lg flex gap-2 items-center cursor-pointer delay-75 transition ${
+            className={`group w-full px-6 py-2 rounded-l-lg flex gap-2 items-center cursor-pointer ${
               pathname.startsWith("/dashboard/reports")
                 ? "bg-primary text-white"
                 : "bg-gray-300 text-primary hover:text-white hover:bg-primary"
