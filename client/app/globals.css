@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #dcaf00;
+  --secondary: #b18721;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #dcaf00;
+    --secondary: #b18721;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Poppins, sans-serif;
+}
