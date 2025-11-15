@@ -66,7 +66,7 @@ const TableUserData = () => {
               ID{renderSortArrow("id")}
             </th>
             <th
-              className="px-4 py-2 border cursor-pointer"
+              className="px-4 py-2 border cursor-pointer text-left"
               onClick={() => {
                 setSortKey("name");
                 setSortAsc(sortKey === "name" ? !sortAsc : true);
@@ -75,7 +75,7 @@ const TableUserData = () => {
               Name{renderSortArrow("name")}
             </th>
             <th
-              className="px-4 py-2 border cursor-pointer"
+              className="px-4 py-2 border cursor-pointer text-left"
               onClick={() => {
                 setSortKey("email");
                 setSortAsc(sortKey === "email" ? !sortAsc : true);
@@ -84,7 +84,7 @@ const TableUserData = () => {
               Email{renderSortArrow("email")}
             </th>
             <th
-              className="px-4 py-2 border cursor-pointer"
+              className="px-4 py-2 border cursor-pointer text-left"
               onClick={() => {
                 setSortKey("role");
                 setSortAsc(sortKey === "role" ? !sortAsc : true);
@@ -93,7 +93,7 @@ const TableUserData = () => {
               Role{renderSortArrow("role")}
             </th>
             <th
-              className="px-4 py-2 border cursor-pointer"
+              className="px-4 py-2 border cursor-pointer text-left"
               onClick={() => {
                 setSortKey("created_at");
                 setSortAsc(sortKey === "created_at" ? !sortAsc : true);
@@ -106,7 +106,7 @@ const TableUserData = () => {
         <tbody>
           {pageData.map((user: User) => (
             <tr key={user.id}>
-              <td className="border px-4 py-2">{user.id}</td>
+              <td className="border px-4 py-2 text-center">{user.id}</td>
               <td className="border px-4 py-2">{user.name}</td>
               <td className="border px-4 py-2">{user.email}</td>
               <td className="border px-4 py-2">{user.role}</td>
@@ -119,17 +119,19 @@ const TableUserData = () => {
       {/* Pagination UI */}
       <div className="flex justify-center items-center gap-2 mt-4">
         <button
-          className="px-2 py-1 rounded border bg-gray-100 disabled:opacity-50"
+          className="px-2 py-1 rounded border bg-gray-100 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
           onClick={() => setPage((p) => Math.max(1, p - 1))}
           disabled={page === 1}
         >
           Previous
         </button>
+
         <span>
           {page} / {totalPages}
         </span>
+
         <button
-          className="px-2 py-1 rounded border bg-gray-100 disabled:opacity-50"
+          className="px-2 py-1 rounded border bg-gray-100 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
           onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
           disabled={page === totalPages}
         >
