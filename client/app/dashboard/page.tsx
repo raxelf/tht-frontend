@@ -1,3 +1,4 @@
+import SummaryCard from "@/components/ui/SummaryCard";
 import TableUserData from "@/components/ui/TableUserData";
 
 const DashboardPage = () => {
@@ -10,10 +11,18 @@ const DashboardPage = () => {
 
       <div className="w-full h-full p-8">
         {/* summary */}
-        <div className="grid grid-cols-3 w-full">
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className="grid grid-cols-3 w-full gap-8">
+          <SummaryCard
+            title="Users"
+            icon="ri-account-circle-2-line"
+            qty={"30"}
+          />
+          <SummaryCard title="Transactions" icon="ri-swap-line" qty={"67"} />
+          <SummaryCard
+            title="Income"
+            icon="ri-money-dollar-circle-line"
+            qty={"IDR 1,000,000"}
+          />
         </div>
 
         {/* data */}
