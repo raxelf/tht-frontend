@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import "remixicon/fonts/remixicon.css";
 
 const poppinsFont = Poppins({
   subsets: ["latin"],

@@ -19,7 +19,7 @@ const loginSchema = z.object({
 
 const registeredUser = [
   {
-    id: "1",
+    id: "0",
     email: "admin@example.com",
     password: "admin123",
   },

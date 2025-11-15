@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "name": "Budi Santoso",
+    "email": "budi.santoso1@example.com",
+    "role": "Admin",
+    "created_at": "2025-08-02"
+  },
+  {
+    "id": 2,
+    "name": "Siti Rahma",
+    "email": "siti.rahma2@example.com",
+    "role": "User",
+    "created_at": "2025-07-09"
+  },
+  {
+    "id": 3,
+    "name": "Andi Wijaya",
+    "email": "andi.wijaya3@example.com",
+    "role": "Admin",
+    "created_at": "2025-09-15"
+  },
+  {
+    "id": 4,
+    "name": "Dewi Kartika",
+    "email": "dewi.kartika4@example.com",
+    "role": "User",
+    "created_at": "2025-08-10"
+  },
+  {
+    "id": 5,
+    "name": "Rizky Pratama",
+    "email": "rizky.pratama5@example.com",
+    "role": "Manager",
+    "created_at": "2025-10-12"
+  },
+  {
+    "id": 6,
+    "name": "Nurul Aini",
+    "email": "nurul.aini6@example.com",
+    "role": "User",
+    "created_at": "2025-08-27"
+  },
+  {
+    "id": 7,
+    "name": "Fajar Mukti",
+    "email": "fajar.mukti7@example.com",
+    "role": "Manager",
+    "created_at": "2025-10-03"
+  },
+  {
+    "id": 8,
+    "name": "Lia Ramadhani",
+    "email": "lia.ramadhani8@example.com",
+    "role": "Staff",
+    "created_at": "2025-10-05"
+  },
+  {
+    "id": 9,
+    "name": "Indra Gunawan",
+    "email": "indra.gunawan9@example.com",
+    "role": "Admin",
+    "created_at": "2025-08-03"
+  },
+  {
+    "id": 10,
+    "name": "Putri Saraswati",
+    "email": "putri.saraswati10@example.com",
+    "role": "Manager",
+    "created_at": "2025-07-07"
+  },
+  {
+    "id": 11,
+    "name": "Dedi Suryadi",
+    "email": "dedi.suryadi11@example.com",
+    "role": "Manager",
+    "created_at": "2025-09-27"
+  },
+  {
+    "id": 12,
+    "name": "Sarah Nurfadilah",
+    "email": "sarah.nurfadilah12@example.com",
+    "role": "User",
+    "created_at": "2025-07-06"
+  },
+  {
+    "id": 13,
+    "name": "Rina Aryanti",
+    "email": "rina.aryanti13@example.com",
+    "role": "Admin",
+    "created_at": "2025-08-24"
+  },
+  {
+    "id": 14,
+    "name": "Hendra Saputra",
+    "email": "hendra.saputra14@example.com",
+    "role": "Manager",
+    "created_at": "2025-08-09"
+  },
+  {
+    "id": 15,
+    "name": "Ayu Lestari",
+    "email": "ayu.lestari15@example.com",
+    "role": "User",
+    "created_at": "2025-10-03"
+  },
+  {
+    "id": 16,
+    "name": "Eko Susanto",
+    "email": "eko.susanto16@example.com",
+    "role": "Manager",
+    "created_at": "2025-08-04"
+  },
+  {
+    "id": 17,
+    "name": "Joko Sutrisno",
+    "email": "joko.sutrisno17@example.com",
+    "role": "User",
+    "created_at": "2025-08-04"
+  },
+  {
+    "id": 18,
+    "name": "Vera Kurniawati",
+    "email": "vera.kurniawati18@example.com",
+    "role": "User",
+    "created_at": "2025-07-08"
+  },
+  {
+    "id": 19,
+    "name": "Dian Anggraini",
+    "email": "dian.anggraini19@example.com",
+    "role": "Manager",
+    "created_at": "2025-08-29"
+  },
+  {
+    "id": 20,
+    "name": "Ismail Ibrahim",
+    "email": "ismail.ibrahim20@example.com",
+    "role": "Admin",
+    "created_at": "2025-08-20"
+  },
+  {
+    "id": 21,
+    "name": "Budi Santoso",
+    "email": "budi.santoso21@example.com",
+    "role": "User",
+    "created_at": "2025-08-19"
+  },
+  {
+    "id": 22,
+    "name": "Siti Rahma",
+    "email": "siti.rahma22@example.com",
+    "role": "User",
+    "created_at": "2025-10-01"
+  },
+  {
+    "id": 23,
+    "name": "Andi Wijaya",
+    "email": "andi.wijaya23@example.com",
+    "role": "Admin",
+    "created_at": "2025-10-11"
+  },
+  {
+    "id": 24,
+    "name": "Dewi Kartika",
+    "email": "dewi.kartika24@example.com",
+    "role": "Staff",
+    "created_at": "2025-10-01"
+  },
+  {
+    "id": 25,
+    "name": "Rizky Pratama",
+    "email": "rizky.pratama25@example.com",
+    "role": "Admin",
+    "created_at": "2025-10-19"
+  },
+  {
+    "id": 26,
+    "name": "Nurul Aini",
+    "email": "nurul.aini26@example.com",
+    "role": "User",
+    "created_at": "2025-08-03"
+  },
+  {
+    "id": 27,
+    "name": "Fajar Mukti",
+    "email": "fajar.mukti27@example.com",
+    "role": "Manager",
+    "created_at": "2025-10-03"
+  },
+  {
+    "id": 28,
+    "name": "Lia Ramadhani",
+    "email": "lia.ramadhani28@example.com",
+    "role": "Manager",
+    "created_at": "2025-10-22"
+  },
+  {
+    "id": 29,
+    "name": "Indra Gunawan",
+    "email": "indra.gunawan29@example.com",
+    "role": "Admin",
+    "created_at": "2025-10-25"
+  },
+  {
+    "id": 30,
+    "name": "Putri Saraswati",
+    "email": "putri.saraswati30@example.com",
+    "role": "User",
+    "created_at": "2025-07-06"
+  }
+]

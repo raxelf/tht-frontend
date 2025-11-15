@@ -9,7 +9,11 @@ export const proxy = async (request: NextRequest) => {
 
   const { pathname } = request.nextUrl;
   const isPublicRoutes = ["/", "/login"].includes(pathname);
-  const isProtectedRoutes = ["/dashboard"].includes(pathname);
+  const isProtectedRoutes = [
+    "/dashboard",
+    "/dashboard/users",
+    "/dashboard/reports",
+  ].includes(pathname);
 
   // check is logged in
   const cookieStorage = await cookies();
