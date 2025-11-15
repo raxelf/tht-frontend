@@ -18,28 +18,40 @@ const TableUserData = () => {
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("id");
   const [sortAsc, setSortAsc] = useState(true);
+  const [page, setPage] = useState(1);
 
-  // search user berdasarkan nama/email
+  // search handle (always back to page 1)
+  const handleSearch = (v: string) => {
+    setSearch(v);
+    setPage(1);
+  };
+
+  // search
   let filteredData = userData.filter(
     (user: User) =>
       user.name.toLowerCase().includes(search.toLowerCase()) ||
       user.email.toLowerCase().includes(search.toLowerCase())
   );
 
-  // Sort asc/desc
+  // Sort
   filteredData = [...filteredData].sort((a, b) => {
     if (a[sortKey] < b[sortKey]) return sortAsc ? -1 : 1;
     if (a[sortKey] > b[sortKey]) return sortAsc ? 1 : -1;
     return 0;
   });
 
-  // icon
+  // pagination (10 data/page)
+  const pageSize = 10;
+  const totalPages = Math.ceil(filteredData.length / pageSize);
+  const pageData = filteredData.slice((page - 1) * pageSize, page * pageSize);
+
+  // sort icon asc/desc
   const renderSortArrow = (key: SortKey) =>
     sortKey === key ? (sortAsc ? " ▲" : " ▼") : "";
 
   return (
     <div className="mt-8">
-      <SearchBar search={search} setSearch={setSearch} />
+      <SearchBar search={search} setSearch={handleSearch} />
 
       <table className="w-full">
         <thead>
@@ -92,7 +104,7 @@ const TableUserData = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredData.map((user: User) => (
+          {pageData.map((user: User) => (
             <tr key={user.id}>
               <td className="border px-4 py-2">{user.id}</td>
               <td className="border px-4 py-2">{user.name}</td>
@@ -103,6 +115,27 @@ const TableUserData = () => {
           ))}
         </tbody>
       </table>
+
+      {/* Pagination UI */}
+      <div className="flex justify-center items-center gap-2 mt-4">
+        <button
+          className="px-2 py-1 rounded border bg-gray-100 disabled:opacity-50"
+          onClick={() => setPage((p) => Math.max(1, p - 1))}
+          disabled={page === 1}
+        >
+          Previous
+        </button>
+        <span>
+          {page} / {totalPages}
+        </span>
+        <button
+          className="px-2 py-1 rounded border bg-gray-100 disabled:opacity-50"
+          onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+          disabled={page === totalPages}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
